@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Lovable, Bolt & Base44 to WordPress Theme — Free Tool | ConvertoWP</title>
+    <meta name="description" content="Free tool to convert Lovable, Bolt.new & Base44 websites into fully functional WordPress themes. 1:1 pixel-perfect conversion with content editing. No coding required.">
+    <meta name="keywords" content="lovable to wordpress, bolt to wordpress, base44 to wordpress, convert AI website to wordpress, lovable wordpress theme, bolt.new wordpress, AI site to wordpress converter, free wordpress converter">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="ConvertoWP">
+    <link rel="canonical" href="https://convertowp.com/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Convert Lovable, Bolt & Base44 to WordPress Theme — Free Tool">
+    <meta property="og:description" content="Transform your AI-built websites into production-ready WordPress themes in minutes. Pixel-perfect. Free forever.">
+    <meta property="og:url" content="https://convertowp.com/">
+    <meta property="og:site_name" content="ConvertoWP">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Convert Lovable, Bolt & Base44 to WordPress Theme — Free">
+    <meta name="twitter:description" content="Transform AI-built websites into production-ready WordPress themes. Free, instant, pixel-perfect.">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "ConvertoWP",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "description": "Convert Lovable, Bolt.new and Base44 websites into fully functional WordPress themes with 1:1 content, styling, and layout preservation plus WordPress content editing.",
+        "featureList": "Lovable to WordPress, Bolt to WordPress, Base44 to WordPress, 1:1 pixel-perfect conversion, WordPress content editing, Form handling, Multi-route support"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I convert a Lovable site to WordPress?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Export your Lovable project as a ZIP file, upload it to ConvertoWP, select 'Lovable' as the source platform, and click Generate. The tool will build your project, render every route, and package a pixel-perfect WordPress theme with content editing built in. The whole process takes 2-5 minutes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I convert a Bolt.new website to WordPress?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. ConvertoWP fully supports Bolt.new projects. Export your Bolt project as a ZIP, upload it, select 'Bolt' as the platform, and the converter will generate a fully functional WordPress theme that preserves your exact design, layout, and interactivity."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does ConvertoWP support Base44 to WordPress conversion?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely. Base44 is one of the three platforms supported by ConvertoWP. Upload your Base44 project ZIP, select 'Base44' as the source, and you will receive a WordPress theme that matches your original site 1:1 with full content editing capabilities."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is ConvertoWP really free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, ConvertoWP is completely free with no hidden costs, no signup required, and no usage limits. You upload your ZIP, get your WordPress theme, and you are done."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Will my converted WordPress theme look exactly like my original site?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. ConvertoWP performs a 1:1 pixel-perfect conversion. It builds your project locally, renders every route with a real browser engine, and preserves all CSS, layouts, animations, and interactive elements. The WordPress theme will look and behave identically to your original site."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I edit the content after converting to WordPress?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Every converted theme includes a built-in WordPress content editor accessible from Appearance > Theme Content in your WordPress admin. You can edit headings, paragraphs, buttons, images, and more without touching any code. Changes appear instantly on the frontend."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do forms work in the converted WordPress theme?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. ConvertoWP automatically wires all forms in your converted theme to a WordPress REST API endpoint. Form submissions are stored as WordPress posts and trigger email notifications to the site admin. No additional plugins required."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does ConvertoWP compare to WPConvert.ai?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ConvertoWP is a free alternative that specifically supports Lovable, Bolt.new, and Base44 in a single tool. Unlike paid SaaS converters, ConvertoWP requires no account, has no usage limits, and includes WordPress content editing and form handling out of the box."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="site-nav" id="site-nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo" aria-label="ConvertoWP Home">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5z" fill="url(#logo-grad)"/><path d="M2 17l10 5 10-5" stroke="url(#logo-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 12l10 5 10-5" stroke="url(#logo-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="logo-grad" x1="2" y1="2" x2="22" y2="22"><stop stop-color="#3b82f6"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs></svg>
+                <span>ConvertoWP</span>
+            </a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#platforms">Platforms</a>
+                <a href="#faq">FAQ</a>
+            </div>
+            <a href="#converter" class="nav-cta">Convert Now — Free</a>
+            <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Toggle menu">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+        </div>
+        <div class="nav-mobile-menu" id="nav-mobile-menu">
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#platforms">Platforms</a>
+            <a href="#faq">FAQ</a>
+            <a href="#converter" class="nav-cta mobile-cta">Convert Now — Free</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-glow"></div>
+            <div class="container hero-container">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    100% Free — No Signup Required
+                </div>
+                <h1>Convert <span class="gradient-text">Lovable, Bolt & Base44</span> Sites to WordPress Themes</h1>
+                <p class="hero-subtitle">Transform your AI-built websites into production-ready WordPress themes in minutes. Pixel-perfect 1:1 conversion with content editing, working forms, and multi-route support — all for free.</p>
+                <div class="hero-actions">
+                    <a href="#converter" class="btn btn-primary btn-lg">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        Start Converting — It's Free
+                    </a>
+                    <a href="#how-it-works" class="btn btn-ghost btn-lg">See How It Works</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <strong>3</strong>
+                        <span>Platforms Supported</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <strong>1:1</strong>
+                        <span>Pixel-Perfect Output</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <strong>$0</strong>
+                        <span>Forever Free</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Supported Platforms Bar -->
+        <section class="platforms-bar" aria-label="Supported platforms">
+            <div class="container">
+                <p class="platforms-label">Works with the most popular AI website builders</p>
+                <div class="platforms-logos">
+                    <div class="platform-logo-item">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#f472b6" stroke-width="2"/><path d="M8 12l3 3 5-5" stroke="#f472b6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span>Lovable</span>
+                    </div>
+                    <div class="platform-logo-item">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span>Bolt.new</span>
+                    </div>
+                    <div class="platform-logo-item">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="4" stroke="#34d399" stroke-width="2"/><path d="M8 12h8M12 8v8" stroke="#34d399" stroke-width="2" stroke-linecap="round"/></svg>
+                        <span>Base44</span>
+                    </div>
+                    <div class="platform-arrow">
+                        <svg width="40" height="24" viewBox="0 0 40 24" fill="none"><path d="M2 12h32m0 0l-6-6m6 6l-6 6" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="platform-logo-item wp-logo">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#3b82f6" stroke-width="2"/><path d="M12 6v6l4 2" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span>WordPress</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Converter Tool Section -->
+        <section class="converter-section" id="converter">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Convert Your Site Now</h2>
+                    <p>Upload your project ZIP export and get a fully functional WordPress theme in minutes.</p>
+                </div>
+
+                <div class="converter-card">
+                    <!-- Upload UI -->
+                    <div id="upload-section">
+                        <label for="lovable_zip" class="drop-zone" id="drop-zone">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" class="upload-icon">
+                                <path d="M12 4L12 16M12 4L8 8M12 4L16 8M4 17L4 19C4 20.1046 4.89543 21 6 21L18 21C19.1046 21 20 20.1046 20 19L20 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <h3>Drag & Drop your .zip here</h3>
+                            <p>or click to browse</p>
+                        </label>
+                        <input type="file" id="lovable_zip" accept=".zip" class="hidden-file-input">
+
+                        <div class="platform-selector">
+                            <label class="platform-label">Source Platform:</label>
+                            <div class="platform-options">
+                                <label class="platform-radio">
+                                    <input type="radio" name="platform" value="Lovable" checked>
+                                    <span class="radio-custom">Lovable</span>
+                                </label>
+                                <label class="platform-radio">
+                                    <input type="radio" name="platform" value="Base44">
+                                    <span class="radio-custom">Base44</span>
+                                </label>
+                                <label class="platform-radio">
+                                    <input type="radio" name="platform" value="Bolt">
+                                    <span class="radio-custom">Bolt</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary btn-lg btn-full" id="upload-btn" disabled>
+                            Generate WordPress Theme
+                        </button>
+                    </div>
+
+                    <!-- Progress UI -->
+                    <div class="hidden" id="progress-section">
+                        <div class="loader">
+                            <div class="spinner"></div>
+                            <h2>Agent is working...</h2>
+                        </div>
+
+                        <div class="steps-container">
+                            <div class="step pending" id="step-1">
+                                <div class="step-icon">1</div>
+                                <div class="step-text">Extracting ZIP</div>
+                            </div>
+                            <div class="step pending" id="step-2">
+                                <div class="step-icon">2</div>
+                                <div class="step-text">Building Vite Project (npm run build)</div>
+                            </div>
+                            <div class="step pending" id="step-3">
+                                <div class="step-icon">3</div>
+                                <div class="step-text">Rendering routes locally</div>
+                            </div>
+                            <div class="step pending" id="step-4">
+                                <div class="step-icon">4</div>
+                                <div class="step-text">
+                                    Converting rendered pages into WordPress templates
+                                    <div class="conversion-progress-container hidden" id="conversion-progress">
+                                        <span class="conversion-progress-text" id="conversion-progress-text">0%</span>
+                                        <div class="conversion-progress-track">
+                                            <div class="conversion-progress-bar" id="conversion-progress-fill"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step pending" id="step-5">
+                                <div class="step-icon">5</div>
+                                <div class="step-text">Packaging WordPress Theme ZIP</div>
+                            </div>
+                        </div>
+
+                        <div class="console-output" id="console">
+                            <div class="log-line">> Awaiting zip...</div>
+                        </div>
+                    </div>
+
+                    <!-- Success UI -->
+                    <div class="hidden" id="success-section">
+                        <div class="success-icon-wrap">
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none">
+                                <path d="M22 11.08V12C21.9988 14.1564 21.3001 16.2547 20.0093 17.9818C18.7185 19.709 16.9033 20.9725 14.8354 21.5839C12.7674 22.1953 10.5573 22.1219 8.53447 21.3746C6.51168 20.6273 4.78465 19.2461 3.61096 17.4371C2.43727 15.628 1.87979 13.4881 2.02168 11.3363C2.16356 9.18455 2.99721 7.13631 4.39828 5.49706C5.79935 3.85781 7.69279 2.71537 9.79619 2.24013C11.8996 1.7649 14.1003 1.98232 16.07 2.86" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M22 4L12 14.01L9 11.01" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h2 class="success-title">Theme is Ready!</h2>
+                        <p class="success-desc">Your interactive WordPress theme has been successfully generated.</p>
+                        <a href="#" id="download-link" class="btn btn-success btn-lg btn-full">Download Theme ZIP</a>
+                        <button class="btn btn-ghost" onclick="location.reload()">Convert Another</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section" id="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why ConvertoWP Is the Best Way to Convert AI Sites to WordPress</h2>
+                    <p>Everything you need to migrate from AI website builders to WordPress, in a single free tool.</p>
+                </div>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>
+                        </div>
+                        <h3>1:1 Pixel-Perfect Conversion</h3>
+                        <p>Your WordPress theme will look exactly like your original Lovable, Bolt, or Base44 site. Every font, color, spacing, and animation is preserved.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                        </div>
+                        <h3>WordPress Content Editing</h3>
+                        <p>Edit headings, text, buttons, and images directly from your WordPress admin panel. No coding required — your content stays dynamic and manageable.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                        </div>
+                        <h3>Multi-Route Support</h3>
+                        <p>Automatically detects every route in your React app and generates a dedicated WordPress template for each page. Home, About, Contact — all converted.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <h3>Working Forms</h3>
+                        <p>Contact forms, lead capture, and any other forms are automatically wired to WordPress. Submissions are stored as posts and trigger email notifications.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                        </div>
+                        <h3>Mobile Menu Support</h3>
+                        <p>Hamburger menus, responsive navigation, and mobile breakpoints are automatically detected and preserved in the WordPress theme.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h3>100% Free — No Limits</h3>
+                        <p>No signup, no credit card, no usage caps, no watermarks. Convert unlimited projects from Lovable, Bolt, and Base44 without paying a cent.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="how-section" id="how-it-works">
+            <div class="container">
+                <div class="section-header">
+                    <h2>How to Convert Your AI Website to WordPress in 3 Steps</h2>
+                    <p>From AI builder export to a fully functional WordPress theme — in under 5 minutes.</p>
+                </div>
+                <div class="steps-grid">
+                    <article class="how-step">
+                        <div class="how-step-number">1</div>
+                        <h3>Export Your Project ZIP</h3>
+                        <p>Download your site as a ZIP from Lovable, Bolt.new, or Base44. Every platform has a built-in export option — just click download and you're set.</p>
+                    </article>
+                    <article class="how-step">
+                        <div class="how-step-number">2</div>
+                        <h3>Upload & Select Platform</h3>
+                        <p>Drag and drop your ZIP file into ConvertoWP and select your source platform. The converter will build, render, and convert every page automatically.</p>
+                    </article>
+                    <article class="how-step">
+                        <div class="how-step-number">3</div>
+                        <h3>Download & Install on WordPress</h3>
+                        <p>Download your WordPress theme ZIP. Go to your WordPress admin, navigate to Appearance > Themes > Add New > Upload, and activate your new theme.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platform-Specific Sections (SEO Content) -->
+        <section class="platform-detail" id="platforms">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Supported Platforms</h2>
+                    <p>Three AI website builders. One powerful converter. Zero cost.</p>
+                </div>
+
+                <div class="platform-cards">
+                    <!-- Lovable -->
+                    <article class="platform-card" id="lovable-to-wordpress">
+                        <div class="platform-card-header lovable-accent">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#f472b6" stroke-width="2"/><path d="M8 12l3 3 5-5" stroke="#f472b6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <h3>Lovable to WordPress Converter</h3>
+                        </div>
+                        <p>Lovable is one of the most popular AI website builders, letting you create beautiful React-based websites from prompts. But when you need to host on your own WordPress server, edit content without code, or integrate with WordPress plugins — you need a real WordPress theme.</p>
+                        <p><strong>ConvertoWP converts your Lovable export into a fully functional WordPress theme</strong> that preserves every pixel of your design. The converter handles React Router routes, Vite builds, Tailwind CSS styles, Framer Motion animations, and Lovable-specific assets like <code>lovable-uploads</code>.</p>
+                        <ul class="platform-features">
+                            <li>Supports all Lovable React + Vite + Tailwind projects</li>
+                            <li>Preserves Shadcn/UI components and Lucide icons</li>
+                            <li>Converts multi-page Lovable apps with React Router</li>
+                            <li>Handles Lovable's Supabase-free export format</li>
+                        </ul>
+                    </article>
+
+                    <!-- Bolt -->
+                    <article class="platform-card" id="bolt-to-wordpress">
+                        <div class="platform-card-header bolt-accent">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <h3>Bolt.new to WordPress Converter</h3>
+                        </div>
+                        <p>Bolt.new by StackBlitz lets you build full-stack web apps using AI prompts directly in the browser. While Bolt creates impressive React/Vite sites, many users want to move to WordPress for easier content management, SEO plugins, and traditional hosting.</p>
+                        <p><strong>ConvertoWP handles Bolt.new projects seamlessly.</strong> Upload your exported ZIP, and the converter will install dependencies, build the Vite project, capture every rendered page, and package it as a WordPress theme — complete with content editing and form handling.</p>
+                        <ul class="platform-features">
+                            <li>Full support for Bolt.new Vite + React exports</li>
+                            <li>Automatic dependency resolution and build</li>
+                            <li>Preserves Bolt's generated UI components</li>
+                            <li>Works with single-page and multi-page Bolt projects</li>
+                        </ul>
+                    </article>
+
+                    <!-- Base44 -->
+                    <article class="platform-card" id="base44-to-wordpress">
+                        <div class="platform-card-header base44-accent">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="4" stroke="#34d399" stroke-width="2"/><path d="M8 12h8M12 8v8" stroke="#34d399" stroke-width="2" stroke-linecap="round"/></svg>
+                            <h3>Base44 to WordPress Converter</h3>
+                        </div>
+                        <p>Base44 is an AI platform that generates web applications from natural language descriptions. Many Base44 users want to migrate to WordPress for better control over hosting, SEO, domain management, and long-term content updates.</p>
+                        <p><strong>ConvertoWP is one of the only tools that supports Base44 to WordPress conversion.</strong> It processes your Base44 export, builds the project, renders pages with Puppeteer, and generates a production-ready WordPress theme that matches your original Base44 site exactly.</p>
+                        <ul class="platform-features">
+                            <li>One of the few tools supporting Base44 exports</li>
+                            <li>Converts all pages and routes automatically</li>
+                            <li>Preserves Base44's generated styling and layout</li>
+                            <li>Full WordPress integration with content editing</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison / Why WordPress Section -->
+        <section class="why-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why Convert AI Websites to WordPress?</h2>
+                    <p>AI builders are great for prototyping, but WordPress gives you production-grade power.</p>
+                </div>
+                <div class="comparison-grid">
+                    <div class="comparison-item">
+                        <div class="comparison-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        </div>
+                        <h3>SEO Plugins & Control</h3>
+                        <p>Use Yoast, RankMath, or any SEO plugin. Full control over meta tags, sitemaps, and structured data.</p>
+                    </div>
+                    <div class="comparison-item">
+                        <div class="comparison-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                        </div>
+                        <h3>60,000+ Plugins</h3>
+                        <p>WooCommerce, contact forms, analytics, caching, security — the entire WordPress ecosystem at your fingertips.</p>
+                    </div>
+                    <div class="comparison-item">
+                        <div class="comparison-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h3>Own Your Hosting</h3>
+                        <p>Host on your own domain with any provider. No vendor lock-in, no platform limits, no surprise pricing changes.</p>
+                    </div>
+                    <div class="comparison-item">
+                        <div class="comparison-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <h3>Client Handoff</h3>
+                        <p>Clients know WordPress. Hand off a familiar CMS dashboard they can manage without developers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" id="faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Everything you need to know about converting AI-built sites to WordPress.</p>
+                </div>
+                <div class="faq-list">
+                    <details class="faq-item" open>
+                        <summary><h3>How do I convert a Lovable site to WordPress?</h3></summary>
+                        <p>Export your Lovable project as a ZIP file from the Lovable dashboard. Upload it to ConvertoWP, select "Lovable" as the source platform, and click "Generate WordPress Theme." The tool will build your project, render every route with Puppeteer, and package a pixel-perfect WordPress theme with content editing built in. The entire process takes 2-5 minutes.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary><h3>Can I convert a Bolt.new website to WordPress?</h3></summary>
+                        <p>Yes. ConvertoWP fully supports Bolt.new projects. Export your Bolt project as a ZIP, upload it to ConvertoWP, select "Bolt" as the platform, and the converter will generate a fully functional WordPress theme that preserves your exact design, layout, and interactivity.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary><h3>Does ConvertoWP support Base44 to WordPress conversion?</h3></summary>
+                        <p>Absolutely. Base44 is one of the three platforms supported by ConvertoWP. Upload your Base44 project ZIP, select "Base44" as the source, and you will receive a WordPress theme that matches your original site 1:1 with full content editing capabilities.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary><h3>Is ConvertoWP really free?</h3></summary>
+                        <p>Yes, ConvertoWP is completely free with no hidden costs, no signup required, and no usage limits. You upload your ZIP, get your WordPress theme, and you are done. No watermarks, no trial periods, no feature gating.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary><h3>Will my converted WordPress theme look exactly like my original site?</h3></summary>
+                        <p>Yes. ConvertoWP performs a 1:1 pixel-perfect conversion. It builds your project locally, renders every route with a real browser engine (Puppeteer), and preserves all CSS, layouts, animations, and interactive elements. The WordPress theme will look and behave identically to your original AI-built site.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary><h3>Can I edit the content after converting to WordPress?</h3></summary>
+                        <p>Yes. Every converted theme includes a built-in WordPress content editor accessible from <strong>Appearance &gt; Theme Content</strong> in your WordPress admin. You can edit headings, paragraphs, buttons, images, and more without touching any code. Changes appear instantly on the frontend.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary><h3>Do forms work in the converted WordPress theme?</h3></summary>
+                        <p>Yes. ConvertoWP automatically wires all forms in your converted theme to a WordPress REST API endpoint. Form submissions are stored as WordPress posts under <strong>Form Entries</strong> and trigger email notifications to the site admin. No additional plugins required.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary><h3>How does ConvertoWP compare to WPConvert.ai and other paid converters?</h3></summary>
+                        <p>ConvertoWP is a free alternative that specifically supports Lovable, Bolt.new, and Base44 in a single tool. Unlike paid SaaS converters, ConvertoWP requires no account, has no usage limits, and includes WordPress content editing and form handling out of the box. Paid tools like WPConvert.ai charge per conversion and may not support all three platforms.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary><h3>What do I need to install the converted theme?</h3></summary>
+                        <p>You need a WordPress site (self-hosted WordPress.org). Go to your WordPress admin dashboard, navigate to <strong>Appearance &gt; Themes &gt; Add New &gt; Upload Theme</strong>, select the ZIP file you downloaded from ConvertoWP, and click "Install Now." Then activate the theme and your site is live.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary><h3>Does it work with multi-page sites?</h3></summary>
+                        <p>Yes. ConvertoWP automatically detects all routes defined in your React Router configuration and generates a separate WordPress template for each page. Whether your site has 1 page or 20 pages, every route is captured and converted.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section class="final-cta">
+            <div class="container">
+                <div class="cta-card">
+                    <div class="cta-glow"></div>
+                    <h2>Ready to Move Your AI Site to WordPress?</h2>
+                    <p>Join thousands of developers and creators who are converting their Lovable, Bolt, and Base44 sites to WordPress — completely free.</p>
+                    <a href="#converter" class="btn btn-primary btn-lg">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        Start Converting — It's Free
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <a href="#" class="nav-logo" aria-label="ConvertoWP Home">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5z" fill="url(#logo-grad2)"/><path d="M2 17l10 5 10-5" stroke="url(#logo-grad2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 12l10 5 10-5" stroke="url(#logo-grad2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="logo-grad2" x1="2" y1="2" x2="22" y2="22"><stop stop-color="#3b82f6"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs></svg>
+                        <span>ConvertoWP</span>
+                    </a>
+                    <p>Free tool to convert Lovable, Bolt.new, and Base44 websites into production-ready WordPress themes.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Tool</h4>
+                        <a href="#converter">Convert Now</a>
+                        <a href="#features">Features</a>
+                        <a href="#how-it-works">How It Works</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Platforms</h4>
+                        <a href="#lovable-to-wordpress">Lovable to WordPress</a>
+                        <a href="#bolt-to-wordpress">Bolt to WordPress</a>
+                        <a href="#base44-to-wordpress">Base44 to WordPress</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <a href="#faq">FAQ</a>
+                        <a href="#how-it-works">Getting Started</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ConvertoWP. Free forever. Convert Lovable, Bolt & Base44 to WordPress themes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
