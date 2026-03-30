@@ -1,6 +1,6 @@
-# Use the official Node.js 18 image.
-# Using a specific version to ensure consistency.
-FROM node:18-slim
+# Use the official Node.js 20 image.
+# Using a specific version to ensure consistency and satisfy undici requirements.
+FROM node:20-slim
 
 # Install latest chrome dev package and fonts to support major charsets (Chinese, Japanese, Arabic, Hebrew, etc.)
 # Note: this installs the necessary libs to run the bundled standalone Chromium that Puppeteer installs.
