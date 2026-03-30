@@ -162,7 +162,7 @@ app.get('/events/:taskId', (req, res) => {
 
     const onError = (data) => {
         if (data.taskId === taskId) {
-            res.write(`event: error\ndata: ${JSON.stringify({ error: data.error })}\n\n`);
+            res.write(`event: taskStatusError\ndata: ${JSON.stringify({ error: data.error })}\n\n`);
             res.end();
         }
     };
@@ -175,12 +175,12 @@ app.get('/events/:taskId', (req, res) => {
     };
 
     progressEmitter.on('progress', onProgress);
-    progressEmitter.on('error', onError);
+    progressEmitter.on('taskStatusError', onError);
     progressEmitter.on('complete', onComplete);
 
     req.on('close', () => {
         progressEmitter.removeListener('progress', onProgress);
-        progressEmitter.removeListener('error', onError);
+        progressEmitter.removeListener('taskStatusError', onError);
         progressEmitter.removeListener('complete', onComplete);
     });
 });
@@ -272,7 +272,7 @@ app.post('/upload', upload.single('lovable_zip'), async (req, res) => {
 
         } catch (error) {
             console.error(`Pipeline error for ${taskId}:`, error);
-            progressEmitter.emit('error', { taskId, error: error.message });
+            progressEmitter.emit('taskStatusError', { taskId, error: error.message });
             if (projectPath && fs.existsSync(projectPath)) {
                 fs.rmSync(projectPath, { recursive: true, force: true });
             }

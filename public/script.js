@@ -197,7 +197,7 @@ uploadBtn.addEventListener('click', async () => {
             downloadLink.download = data.themeName;
         });
 
-        eventSource.addEventListener('error', (event) => {
+        eventSource.addEventListener('taskStatusError', (event) => {
             eventSource.close();
             const data = JSON.parse(event.data);
             alert(`Pipeline Error: ${data.error}`);
