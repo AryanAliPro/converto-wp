@@ -14,8 +14,8 @@ const { convertHtmlToPhp } = require('./lib/llm');
 const { packageTheme } = require('./lib/package');
 
 const app = express();
-const port = 3000;
-const host = process.env.HOST || '127.0.0.1';
+const port = process.env.PORT || 3000;
+const host = process.env.HOST || '0.0.0.0';
 const MAX_UPLOAD_BYTES = Number.parseInt(process.env.MAX_UPLOAD_BYTES || '', 10) || (200 * 1024 * 1024);
 const DOWNLOAD_TOKEN_TTL_MS = Number.parseInt(process.env.DOWNLOAD_TOKEN_TTL_MS || '', 10) || (30 * 60 * 1000);
 const allowedZipMimeTypes = new Set([
