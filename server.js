@@ -146,6 +146,28 @@ const upload = multer({
 // Global event emitter for SSE
 const progressEmitter = new EventEmitter();
 
+// Buffer events per task so they are not lost if the SSE client connects late
+const taskEventBuffers = new Map();
+
+function getOrCreateBuffer(taskId) {
+    if (!taskEventBuffers.has(taskId)) {
+        taskEventBuffers.set(taskId, []);
+    }
+    return taskEventBuffers.get(taskId);
+}
+
+function bufferAndEmit(eventName, data) {
+    const buffer = getOrCreateBuffer(data.taskId);
+    buffer.push({ eventName, data });
+    progressEmitter.emit(eventName, data);
+
+    // Auto-cleanup buffer after 5 minutes
+    if (eventName === 'taskStatusError' || eventName === 'complete') {
+        const cleanupTimer = setTimeout(() => taskEventBuffers.delete(data.taskId), 5 * 60 * 1000);
+        if (typeof cleanupTimer.unref === 'function') cleanupTimer.unref();
+    }
+}
+
 // SSE Endpoint
 app.get('/events/:taskId', (req, res) => {
     res.setHeader('Content-Type', 'text/event-stream');
@@ -153,6 +175,22 @@ app.get('/events/:taskId', (req, res) => {
     res.setHeader('Connection', 'keep-alive');
 
     const taskId = req.params.taskId;
+
+    // Replay any buffered events for this task
+    const buffer = taskEventBuffers.get(taskId) || [];
+    for (const entry of buffer) {
+        if (entry.eventName === 'progress') {
+            res.write(`data: ${JSON.stringify({ message: entry.data.message, step: entry.data.step, progress: entry.data.progress })}\n\n`);
+        } else if (entry.eventName === 'taskStatusError') {
+            res.write(`event: taskStatusError\ndata: ${JSON.stringify({ error: entry.data.error })}\n\n`);
+            res.end();
+            return;
+        } else if (entry.eventName === 'complete') {
+            res.write(`event: complete\ndata: ${JSON.stringify({ downloadToken: entry.data.downloadToken, themeName: entry.data.themeName })}\n\n`);
+            res.end();
+            return;
+        }
+    }
 
     const onProgress = (data) => {
         if (data.taskId === taskId) {
@@ -225,13 +263,13 @@ app.post('/upload', upload.single('lovable_zip'), async (req, res) => {
     // Helper to emit progress (Major Steps)
     const log = (step, message) => {
         console.log(`[Task ${taskId}] Step ${step}: ${message}`);
-        progressEmitter.emit('progress', { taskId, step, message });
+        bufferAndEmit('progress', { taskId, step, message });
     };
 
     // Helper to emit detailed granular logs inside a step
     const logDetail = (message, progressPercent = null) => {
         console.log(`      -> ${message}`);
-        progressEmitter.emit('progress', { taskId, step: -1, message, progress: progressPercent });
+        bufferAndEmit('progress', { taskId, step: -1, message, progress: progressPercent });
     };
 
     // Run the pipeline asynchronously
@@ -264,7 +302,7 @@ app.post('/upload', upload.single('lovable_zip'), async (req, res) => {
             removePathIfExists(uploadedZipPath);
 
             // Emit completion
-            progressEmitter.emit('complete', { 
+            bufferAndEmit('complete', { 
                 taskId, 
                 downloadToken,
                 themeName,
@@ -272,7 +310,7 @@ app.post('/upload', upload.single('lovable_zip'), async (req, res) => {
 
         } catch (error) {
             console.error(`Pipeline error for ${taskId}:`, error);
-            progressEmitter.emit('taskStatusError', { taskId, error: error.message });
+            bufferAndEmit('taskStatusError', { taskId, error: error.message });
             if (projectPath && fs.existsSync(projectPath)) {
                 fs.rmSync(projectPath, { recursive: true, force: true });
             }
