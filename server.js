@@ -103,12 +103,67 @@ app.use((req, res, next) => {
     next();
 });
 
+// ========== SEO: robots.txt ==========
+app.get('/robots.txt', (req, res) => {
+    res.type('text/plain');
+    res.setHeader('Cache-Control', 'public, max-age=86400');
+    res.send([
+        'User-agent: *',
+        'Allow: /',
+        'Disallow: /upload',
+        'Disallow: /download',
+        'Disallow: /events/',
+        '',
+        'User-agent: GPTBot',
+        'Allow: /',
+        '',
+        'User-agent: Google-Extended',
+        'Allow: /',
+        '',
+        'Sitemap: https://convertowp.com/sitemap.xml',
+    ].join('\n'));
+});
+
+// ========== SEO: sitemap.xml ==========
+app.get('/sitemap.xml', (req, res) => {
+    res.type('application/xml');
+    res.setHeader('Cache-Control', 'public, max-age=86400');
+    const baseUrl = 'https://convertowp.com';
+    const lastmod = new Date().toISOString().split('T')[0];
+    const urls = [
+        { loc: '/', priority: '1.0', changefreq: 'weekly' },
+        { loc: '/#converter', priority: '0.9', changefreq: 'weekly' },
+        { loc: '/#features', priority: '0.8', changefreq: 'monthly' },
+        { loc: '/#how-it-works', priority: '0.8', changefreq: 'monthly' },
+        { loc: '/#platforms', priority: '0.8', changefreq: 'monthly' },
+        { loc: '/#lovable-to-wordpress', priority: '0.9', changefreq: 'monthly' },
+        { loc: '/#bolt-to-wordpress', priority: '0.9', changefreq: 'monthly' },
+        { loc: '/#base44-to-wordpress', priority: '0.9', changefreq: 'monthly' },
+        { loc: '/#faq', priority: '0.7', changefreq: 'monthly' },
+    ];
+    const urlEntries = urls.map(u => `  <url>
+    <loc>${baseUrl}${u.loc}</loc>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>${u.changefreq}</changefreq>
+    <priority>${u.priority}</priority>
+  </url>`).join('\n');
+    res.send(`<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urlEntries}
+</urlset>`);
+});
+
+// ========== SEO: Noindex API routes ==========
+app.use('/upload', (req, res, next) => { res.setHeader('X-Robots-Tag', 'noindex, nofollow'); next(); });
+app.use('/download', (req, res, next) => { res.setHeader('X-Robots-Tag', 'noindex, nofollow'); next(); });
+app.use('/events', (req, res, next) => { res.setHeader('X-Robots-Tag', 'noindex, nofollow'); next(); });
+
 // Vercel ignores express.static(), so serve the shell page explicitly.
 app.get('/', (req, res) => {
     res.sendFile(path.join(publicDir, 'index.html'));
 });
 
-for (const assetName of ['style.css', 'script.js']) {
+for (const assetName of ['style.css', 'script.js', 'og-image.png']) {
     app.get(`/${assetName}`, (req, res) => {
         res.sendFile(path.join(publicDir, assetName));
     });

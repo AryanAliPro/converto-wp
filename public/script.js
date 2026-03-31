@@ -53,7 +53,7 @@ const revealObserver = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-document.querySelectorAll('.feature-card, .how-step, .platform-card, .comparison-item, .faq-item').forEach(el => {
+document.querySelectorAll('.feature-card, .how-step, .platform-card, .comparison-item, .faq-item, .use-case-card').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(24px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
